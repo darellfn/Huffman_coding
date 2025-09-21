@@ -3,13 +3,11 @@ import java.util.HashMap;
 
 public class Huffman {
 
-    public void huffman(HashMap<Character, Integer> C) {
+    public Node huffman(HashMap<Character, Integer> C) {
         PriorityQueue<Node> Q = new PriorityQueue<Node>();
 
         for (Character s : C.keySet()) {
             Node node = new Node(s, C.get(s), null, null);
-                    System.out.println(s);
-
             Q.offer(node);
         }
 
@@ -21,8 +19,6 @@ public class Huffman {
             Q.offer(node);
         }
 
-       
-        System.out.println(Q);
-        
+        return Q.poll();
     }
 }

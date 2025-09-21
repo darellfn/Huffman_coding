@@ -15,4 +15,13 @@ public class Node implements Comparable<Node> {
     public int compareTo(Node other) {
         return this.f - other.f;
     }
+
+    @Override
+    public String toString() {
+        if (s != null) {
+            return "Leaf: " + s + " freq=" + f;
+        } else {
+            return "Internal freq=" + f;
+        }
+    }
 }
