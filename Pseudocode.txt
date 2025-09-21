@@ -1,0 +1,12 @@
+Proc HuffmanTree(C)
+    Q <- PriorityQueue()
+    for (s, f) ∈ C do
+        Insert(Q, new Node(s, f, null, null))
+    
+    While Size(Q) > 1
+        v1 <- RemoveMin(Q)
+        v2 <- RemoveMin(Q)
+        f = v1.freq + v2.freq
+        Insert(Q, new Node(null, f, v1, v2))
+
+    return RemoveMin(Q)
